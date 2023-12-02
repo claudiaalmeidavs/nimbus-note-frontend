@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Nunito:wght@200;400;500;600&display=swap');
+
+:root {
+  --main-font: "Nunito", sans-serif;
+  --title-font: "IBM Plex Mono", sans-serif;
+  --color-1: #748cab;
+  --color-2: #e2eafc;
+  --color-3: #cae9ff;
+  --color-4: #3e5c76;
+}

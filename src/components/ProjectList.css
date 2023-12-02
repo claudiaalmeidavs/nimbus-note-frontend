@@ -3,41 +3,103 @@
 .regular-h2 {
     font-family: var(--main-font);
     font-size: clamp(20px, 1.7vw, 50px);
-    color: var(--color-3);
-    padding-bottom: 10px;
+    color: var(--color-4);
+    padding-bottom: 15px;
 }
 
 .projects-accordion {
-    border: 1px red solid;
-    display: flex;
-    width: 70%;
+    width: 50%;
 }
 
 .project-list-container {
-    border: 1px rgb(60, 0, 255) solid;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     margin: 15px;
 }
 
+#accordion-item {
+    border: none;
+    background-color: var(--color-2);
+}
+
+
 .accordion-header {
-    background-color: var(--color-3);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     margin-top: 2px;
-    box-shadow: none; 
+    box-shadow: none;
+    border: none;
+    list-style: none;
 }
 
 .accordion-header .accordion-button.collapsed {
     box-shadow: none; 
+    background-color: var(--color-1);
+    color: var(--color-2);
+    font-weight: 600;
 }
+
 
 .accordion-header .accordion-button:not(.collapsed) {
-    background-color: var(--color-4);
-    color: white;
+    background-color: var(--color-1);
+    color: var(--color-2);
     border: none;
     box-shadow: none; 
+    font-weight: 600;
 }
 
+.header-title {
+    margin-left: 25px;
+}
 .accordion-header .accordion-button:not(.collapsed)::after{
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
 }
+
+.accordion-header .accordion-button.collapsed::after{
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-body {
+    font-family: var(--main-font);
+}
+
+.accordion-delete-button {
+    padding: 10px;
+    border-style: none;
+    background-color: var(--color-2);
+    color: var(--color-4);
+    font-weight: 700;
+    font-family: var(--main-font);
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+.accordion-delete-button:hover {
+    color: var(--color-1);
+  }
+
+.accordion-edit-button {
+    padding: 10px;
+    border-style: none;
+    background-color: var(--color-2);
+    color: var(--color-4);
+    font-weight: 700;
+    font-family: var(--main-font);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.accordion-edit-button:hover {
+    color: var(--color-1);
+}
+
+@media screen and (max-width: 910px) {
+    .projects-accordion {
+        width: 100%;
+    }
+    
+}
+
+  
