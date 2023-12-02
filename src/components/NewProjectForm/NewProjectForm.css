@@ -9,7 +9,7 @@
     color: var(--color-4);
     font-family: var(--main-font);
     padding-bottom: 15px;
-    margin-left: 15px;
+    font-size: 30px;
 }
 .register-project-form {
     display: flex;
@@ -29,7 +29,7 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .form-first-section {
