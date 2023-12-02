@@ -2,7 +2,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import "./ProjectListPage.css";
-import ProjectList from "../../components/ProjectList";
+import ProjectList from "../../components/ProjectList/ProjectList";
 
 export default function ProjectListPage () {
 
