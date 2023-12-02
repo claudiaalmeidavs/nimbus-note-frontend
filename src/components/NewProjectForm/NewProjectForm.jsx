@@ -15,18 +15,47 @@ export default function NewProjectForm () {
         deadline: "",
         description: "",
     });
+
+    // Error messages in case required fields are not filled out
+    const [formErrors, setFormErrors] = useState({});
+    const [isSubmitting, setIsSubmitting] = useState(false);
      
-     const handleChange = (e) => {
-       const { name, value } = e.target;
-       setFormData((prevData) => ({
-         ...prevData,
-         [name]: value,
-       }));
-    //    console.log(formData)
-     };
+    // Errors are displaying before submitting, revise this.
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+      
+        // Update form data
+        setFormData((prevData) => ({
+          ...prevData,
+          [name]: value,
+        }));
+      };
     
-     const handleSubmit = (e) => {
+      const handleSubmit = (e) => {
         e.preventDefault();
+      
+        // Perform form validation
+        const requiredFields = ["user_name", "project_title", "category", "priority", "deadline"];
+        const errors = {};
+      
+        requiredFields.forEach((field) => {
+          if (!formData[field]) {
+            errors[field] = `${field.replace("_", " ")} is required`;
+          }
+        });
+      
+        // If there are errors, update the formErrors state and stop form submission
+        if (Object.keys(errors).length > 0) {
+          setFormErrors(errors);
+        //   console.log(formErrors);
+          return;
+        }
+      
+        // Reset formErrors and setIsSubmitting
+        setFormErrors({});
+        setIsSubmitting(true);
+
        axios
          .post("http://localhost:5000/projects", formData)
          .then(() => {
@@ -43,16 +72,19 @@ export default function NewProjectForm () {
                     <label className="form-item form-section-heading" htmlFor="title">Project title</label>
                     <textarea type="text" className="txtarea-small" name="project_title" value={formData.project_title}
                     onChange={handleChange} />
+                    {formErrors.project_title ? <p className="error-message">{formErrors.project_title}</p> : null}
                 </div>
                 <div className="form-first-section">
                     <label className="form-item form-section-heading" htmlFor="user-info">User name</label>
                         <textarea type="text" className="txtarea-small" name="user_name" value={formData.user_name}
                         onChange={handleChange}/>
+                        {formErrors.user_name ? <p className="error-message">{formErrors.user_name}</p> : null}
                     <label className="form-item form-section-heading" htmlFor="company">Company name</label>
                         <textarea type="text" className="txtarea-small" name="company" value={formData.company}
                         onChange={handleChange}/>
                     <label className="form-item form-section-heading" htmlFor="deadline">Deadline</label>
                         <input className="project-deadline-input" type="date" name="deadline" onChange={handleChange} />
+                        {formErrors.deadline ? <p className="error-message">{formErrors.deadline}</p> : null}
                 </div>
                 <div className="form-second-section">  
                 <div className="form-category-section">
@@ -81,6 +113,7 @@ export default function NewProjectForm () {
                             <input className="radio-button" type="radio" name="category" value="Other" checked={formData.category === "Other"}
                             onChange={handleChange}/>Other
                         </label>
+                        {formErrors.category ? <p className="error-message">{formErrors.category}</p> : null}
                 </div>
                     <div className="priority-section">
                         <label className="form-item form-section-heading" htmlFor="priority">Priority</label>
@@ -96,14 +129,15 @@ export default function NewProjectForm () {
                             <input className="radio-button" type="radio" name="priority" value="Low" checked={formData.priority === 'Low'}
                             onChange={handleChange} />Low priority
                         </label> 
+                        {formErrors.priority ? <p className="error-message">{formErrors.priority}</p> : null}
                     </div>
                 </div>
-                <div className="activity-description-section">
+                <div className="project-description-section">
                     <label className="form-section-heading" htmlFor="desc">Project notes</label>
-                    <textarea type="text" className="txtarea-desc" name="description" value={formData.activity_description}
+                    <textarea type="text" className="txtarea-desc" name="description" value={formData.description}
                     onChange={handleChange} />
                 </div>
-                <button className="btn-submit">Submit</button>
+                <button className="btn-submit" disabled={isSubmitting}>Submit</button>
             </form>
         </div>
     )
