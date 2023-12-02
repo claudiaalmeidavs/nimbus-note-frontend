@@ -18,7 +18,6 @@ export default function NewProjectForm () {
 
     // Error messages in case required fields are not filled out
     const [formErrors, setFormErrors] = useState({});
-    const [isSubmitting, setIsSubmitting] = useState(false);
      
     // Errors are displaying before submitting, revise this.
 
@@ -54,7 +53,6 @@ export default function NewProjectForm () {
       
         // Reset formErrors and setIsSubmitting
         setFormErrors({});
-        setIsSubmitting(true);
 
        axios
          .post("http://localhost:5000/projects", formData)
@@ -137,7 +135,7 @@ export default function NewProjectForm () {
                     <textarea type="text" className="txtarea-desc" name="description" value={formData.description}
                     onChange={handleChange} />
                 </div>
-                <button className="btn-submit" disabled={isSubmitting}>Submit</button>
+                <button className="btn-submit">Submit</button>
             </form>
         </div>
     )
