@@ -1,0 +1,21 @@
+.search-projects-input-container {
+    font-family: var(--main-font);
+}
+
+.search-projects-label {
+    margin: 10px;
+    font-weight: 500;
+}
+
+.search-projects-input {
+    border: none;
+    background-color: var(--color-2);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.search-error-message {
+    padding-left: 10px;
+    font-family: var(--main-font);
+    color: grey;
+}

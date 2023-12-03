@@ -1,0 +1,22 @@
+.project-list-outer-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.regular-h2 {
+    align-self: center;
+    font-family: var(--main-font);
+    font-size: clamp(25px, 2.5vw, 50px);
+    color: var(--color-4);
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+.search-filter-section {
+    align-self: center;
+    width: 50%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}

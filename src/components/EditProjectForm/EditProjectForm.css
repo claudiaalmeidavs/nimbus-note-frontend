@@ -1,0 +1,12 @@
+.status-select {
+    outline: none;
+    width: 150px;
+    height: 45px;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    font-family: var(--main-font);
+    color: var(--color1);
+    resize: none;
+    border: none;
+}
