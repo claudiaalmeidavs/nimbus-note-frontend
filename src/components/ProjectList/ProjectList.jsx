@@ -1,9 +1,43 @@
 import "./ProjectList.css";
 import Accordion from "react-bootstrap/Accordion";
 import {Link} from "react-router-dom";
+import axios from "axios";
+import {useState, useEffect} from "react";
 
 
-export default function ProjectList ({projects}) {
+export default function ProjectList () {
+    
+        // fetch projects from database
+
+        const [ projects, setProjects ] = useState([]);
+
+        const fetchProjects = () => {
+            axios.get("http://localhost:5000/projects")
+            .then((response) => {
+                console.log(response.data);
+                setProjects(response.data)
+            })
+            .catch((error) => {
+                console.error("Error fetching projects: ", error);
+            })
+        }
+    
+        useEffect(() => {
+            fetchProjects();
+        }, []);
+    
+
+    // To delete entry
+    function handleDelete (id) {
+        axios.delete(`http://localhost:5000/projects/${id}`)
+        .then(() => {
+            // Update the state with the new list of projects after successful deletion
+            setProjects((prevProjects) => prevProjects.filter((project) => project.id !== id));
+          })
+        .catch(error => {
+            console.error(`Error deleting project with id ${id}:`, error);
+        });
+    }
 
     // To determine formatting of status
     const getStatusFormatting = (status) => {
@@ -45,7 +79,7 @@ export default function ProjectList ({projects}) {
                                 {project.description ? (<p><strong>Task details</strong>: {project.description}</p>) : null}
                                 <div className="buttons-accordion">
                                     <Link to={`/edit/${project.id}`}><button className="accordion-edit-button">✎ Edit details</button></Link>
-                                    <button className="accordion-delete-button">🗑️ Delete entry</button>
+                                    <button className="accordion-delete-button" onClick={() => handleDelete(project.id)}>🗑️ Delete entry</button>
                                 </div>
                             </div>
                         </Accordion.Body>

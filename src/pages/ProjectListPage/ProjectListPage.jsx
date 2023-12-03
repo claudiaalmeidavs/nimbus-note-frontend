@@ -27,7 +27,7 @@ export default function ProjectListPage () {
 
     return (
         <div className="project-list-outer-container">
-            {projects ? (<div><ProjectList projects={projects}/> </div>) : <div>No projects detected</div>}
+            <ProjectList />
         </div>
     )
 }
