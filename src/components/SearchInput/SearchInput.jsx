@@ -11,6 +11,10 @@ export default function SearchInput ({onSearch}) {
     useEffect(() => {
         if (searchTerm !== "") {
             onSearch(searchTerm)
+        } else {
+            onSearch("");
+            // setSearchTerm("");
+            // console.log("Search term has been initialized")
         }
     }, [searchTerm]);
    

@@ -124,66 +124,7 @@ export default function ProjectList({ projects, filteredProjects, filteredProjec
               </Accordion.Item>
             ))}
           </Accordion>
-        ) : ( (projects.length > 0) ? (
-            <Accordion alwaysOpen className="accordion">
-            {projects.map((project) => (
-            <Accordion.Item
-              id="accordion-item"
-              key={project.id}
-              eventKey={project.id}
-            >
-              <Accordion.Header>
-                <div>
-                  <ul className="accordion-header">
-                    <li className="header-id-date">
-                      Project #{project.id} {project.creation_date.substring(0, 10)}
-                    </li>
-                    <li className="header-title">{project.project_title}</li>
-                  </ul>
-                </div>
-              </Accordion.Header>
-              <Accordion.Body>
-                <div className="accordion-body">
-                  <p
-                    className={`project-status-p ${getStatusFormatting(
-                      project.status
-                    )}`}
-                  >
-                    <strong>{project.status}</strong>
-                  </p>
-                  <p>
-                    Requested by{" "}
-                    <strong>
-                      {project.user_name}
-                      {project.company ? ` (${project.company})` : null}
-                    </strong>
-                  </p>
-                  <p>Category: {project.category}</p>
-                  <p>Priority: {project.priority}</p>
-                  <p>Deadline: {project.deadline.substring(0, 10)}</p>
-                  {project.description ? (
-                    <p>
-                      <strong>Task details</strong>: {project.description}
-                    </p>
-                  ) : null}
-                  <div className="buttons-accordion">
-                    <Link to={`/edit/${project.id}`}>
-                      <button className="accordion-edit-button">✎ Edit details</button>
-                    </Link>
-                    <button
-                      className="accordion-delete-button"
-                      onClick={() => handleDelete(project.id)}
-                    >
-                      🗑️ Delete entry
-                    </button>
-                  </div>
-                </div>
-              </Accordion.Body>
-            </Accordion.Item>
-          )
-          )}
-        </Accordion> ) : (<div>No projects detected</div>)
-        )
+        ) : <div>No projects found</div>
         }
       </div>
     </div>

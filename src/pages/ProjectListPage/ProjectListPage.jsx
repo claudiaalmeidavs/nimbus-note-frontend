@@ -37,8 +37,13 @@ export default function ProjectListPage () {
 
     // Filter the projects based on search input
     const handleSearch = (searchTerm) => {
-        setFilteredProjects(projects.filter((project) => project.project_title.toLowerCase().includes(searchTerm.toLowerCase())));
-        console.log("These are the projects filtered by search", filteredProjects)
+        if (searchTerm !== "") {
+            setFilteredProjects(projects.filter((project) => project.project_title.toLowerCase().includes(searchTerm.toLowerCase())));
+            console.log("Search term", searchTerm);
+        } else {
+            setFilteredProjects([]);
+            console.log("Search term", searchTerm);
+        }
     }
 
     // Filter the projects based on status input 
@@ -46,10 +51,10 @@ export default function ProjectListPage () {
         setFilteredProjectsStatus(projects.filter((project) => project.status === selectedStatus))
     }
 
-    useEffect(() => {
-        console.log("These are the projects filtered by status", filteredProjectsStatus);
-        console.log("These are the projects filtered by search", filteredProjects);
-    }, [filteredProjectsStatus])
+    // useEffect(() => {
+    //     console.log("These are the projects filtered by status", filteredProjectsStatus);
+    //     console.log("These are the projects filtered by search", filteredProjects);
+    // }, [filteredProjectsStatus])
 
     return (
         <div className="project-list-outer-container">

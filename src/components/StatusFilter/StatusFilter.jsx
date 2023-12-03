@@ -12,6 +12,9 @@ export default function StatusFilter ({onChange}) {
         if (selectedStatus !== "") {
             onChange(selectedStatus);
             console.log("This is the current status", selectedStatus)
+        } else {
+            onChange(null);
+            console.log("Filter cleared.")
         }
     }, [selectedStatus]);
 
@@ -24,6 +27,8 @@ export default function StatusFilter ({onChange}) {
                 <label htmlFor="in-progress" name="In progress">In progress</label>
                 <input type="radio" name="status" value="Completed" onChange={handleFilterChange}/>
                 <label htmlFor="completed" name="Completed">Completed</label>
+                <input type="radio" name="status" value="" onChange={handleFilterChange} checked={selectedStatus === ""} />
+                <label htmlFor="clear" name="Clear">Clear</label>
         </div>
     )
 }
