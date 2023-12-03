@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Nunito:wght@200;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&display=swap');
 
 :root {
   --main-font: "Nunito", sans-serif;
-  --title-font: "IBM Plex Mono", sans-serif;
+  --title-font: "Ephesis", sans-serif;
   --color-1: #748cab;
   --color-2: #e2eafc;
   --color-3: #cae9ff;
