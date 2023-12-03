@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./SearchInput.css";
 
-export default function SearchInput ({onSearch}) {
+export default function SearchInput ({onSearch, searchErrorMessage}) {
     const [searchTerm, setSearchTerm] = useState("");
 
     const handleInputChange = (event) => {
@@ -13,8 +13,7 @@ export default function SearchInput ({onSearch}) {
             onSearch(searchTerm)
         } else {
             onSearch("");
-            // setSearchTerm("");
-            // console.log("Search term has been initialized")
+
         }
     }, [searchTerm]);
    
@@ -22,6 +21,7 @@ export default function SearchInput ({onSearch}) {
         <div className="search-projects-input-container">
             <label className="search-projects-label" htmlFor="search">Browse projects</label>
             <input className="search-projects-input" type="search" placeholder="Project name" value={searchTerm} onChange={handleInputChange} />
+            <p className="search-error-message">{ searchErrorMessage ? <div>No projects match search</div> : null }</p>
         </div>
     )
 } 

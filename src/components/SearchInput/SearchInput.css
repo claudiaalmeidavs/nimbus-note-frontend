@@ -1,5 +1,4 @@
 .search-projects-input-container {
-    /* border: 2px solid purple; */
     font-family: var(--main-font);
 }
 
@@ -13,4 +12,10 @@
     background-color: var(--color-2);
     border-radius: 5px;
     padding: 5px;
+}
+
+.search-error-message {
+    padding-left: 10px;
+    font-family: var(--main-font);
+    color: grey;
 }

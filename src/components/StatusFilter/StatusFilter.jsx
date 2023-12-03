@@ -20,15 +20,15 @@ export default function StatusFilter ({onChange}) {
 
     return (
         <div className="status-filter-container">
-            <label className="filter-projects-label" htmlFor="search">Browse projects</label>
-                <input type="radio" name="status" value="Not started" onChange={handleFilterChange}/>
-                <label htmlFor="not-started" name="Not started">Not started</label>
-                <input type="radio" name="status" value="In progress" onChange={handleFilterChange}/>
-                <label htmlFor="in-progress" name="In progress">In progress</label>
-                <input type="radio" name="status" value="Completed" onChange={handleFilterChange}/>
-                <label htmlFor="completed" name="Completed">Completed</label>
-                <input type="radio" name="status" value="" onChange={handleFilterChange} checked={selectedStatus === ""} />
-                <label htmlFor="clear" name="Clear">Clear</label>
+            <label className="filter-projects-heading-label" htmlFor="search">Filter by status</label>
+                <input className="filter-radio not-started-radio" type="radio" name="status" value="Not started" onChange={handleFilterChange}/>
+                <label className="filter-label" htmlFor="not-started" name="Not started">Not started</label>
+                <input className="filter-radio in-progress-radio" type="radio" name="status" value="In progress" onChange={handleFilterChange}/>
+                <label className="filter-label" htmlFor="in-progress" name="In progress">In progress</label>
+                <input className="filter-radio completed-radio" type="radio" name="status" value="Completed" onChange={handleFilterChange}/>
+                <label className="filter-label" htmlFor="completed" name="Completed">Completed</label>
+                <input className="filter-radio clear-radio" type="radio" name="status" value="" onChange={handleFilterChange} checked={selectedStatus === ""} />
+                <label className="filter-label" htmlFor="clear" name="Clear">Clear</label>
         </div>
     )
 }

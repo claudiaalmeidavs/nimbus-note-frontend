@@ -54,9 +54,9 @@ export default function ProjectList({ projects, filteredProjects, filteredProjec
           }
       
           setCombinedFilteredProjects(filtered);
-          console.log("Combined projects", filtered);
-          console.log("filteredProjects in ProjectList", filteredProjects);
-          console.log("filteredProjectsStatus in ProjectList", filteredProjectsStatus);
+        //   console.log("Combined projects", filtered);
+        //   console.log("filteredProjects in ProjectList", filteredProjects);
+        //   console.log("filteredProjectsStatus in ProjectList", filteredProjectsStatus);
         } else {
           // If either of the conditions is not met, set it to the original projects
           setCombinedFilteredProjects(projects);
