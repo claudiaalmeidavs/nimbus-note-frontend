@@ -2,13 +2,13 @@ import "./ProjectList.css";
 import Accordion from "react-bootstrap/Accordion";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import {useEffect} from "react";
 
 
-export default function ProjectList({ projects, filteredProjects }) {
+export default function ProjectList({ projects, combinedFilteredProjects }) {
 
   // To delete entry
   function handleDelete(id) {
-    // You might want to implement the delete functionality here
     axios
       .delete(`http://localhost:5000/projects/${id}`)
       .then(() => {
@@ -33,12 +33,16 @@ export default function ProjectList({ projects, filteredProjects }) {
     }
   };
 
+  useEffect(() => {
+    console.log("combinedFilteredProjects received:", combinedFilteredProjects);
+  }, [combinedFilteredProjects]);
+
   return (
     <div className="project-list-container">
       <div className="projects-accordion">
-        {filteredProjects.length > 0 ? (
+        {combinedFilteredProjects.length > 0 ? (
           <Accordion alwaysOpen className="accordion">
-            {filteredProjects.map((project) => (
+            {combinedFilteredProjects.map((project) => (
               <Accordion.Item
                 id="accordion-item"
                 key={project.id}

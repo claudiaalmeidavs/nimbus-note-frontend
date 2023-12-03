@@ -1,0 +1,9 @@
+.status-filter-container {
+    /* border: 2px solid rgb(0, 124, 128); */
+    font-family: var(-rgb(0, 2, 128)font);
+}
+
+.filter-projects-label {
+    margin: 10px;
+    font-weight: 500;
+}

@@ -1,18 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./SearchInput.css";
 
-export default function SearchInput ({projects, onSearch }) {
+export default function SearchInput ({onSearch}) {
     const [searchTerm, setSearchTerm] = useState("");
 
     const handleInputChange = (event) => {
-        setSearchTerm(event.target.value.toLowerCase());
-        const filteredProjects = projects.filter((project) =>
-        project.project_title.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-        console.log("These are the filtered projects", filteredProjects)
-        onSearch(filteredProjects);
+        setSearchTerm(event.target.value.toLowerCase());        
     };
     
+    useEffect(() => {
+        if (searchTerm !== "") {
+            onSearch(searchTerm)
+        }
+    }, [searchTerm]);
+   
     return (
         <div className="search-projects-input-container">
             <label className="search-projects-label" htmlFor="search">Browse projects</label>
