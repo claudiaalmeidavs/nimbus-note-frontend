@@ -14,7 +14,7 @@ export default function SearchInput ({projects, onSearch }) {
     };
     
     return (
-        <div className="search-projects-input">
+        <div className="search-projects-input-container">
             <label className="search-projects-label" htmlFor="search">Browse projects</label>
             <input className="search-projects-input" type="search" placeholder="Project name" value={searchTerm} onChange={handleInputChange} />
         </div>

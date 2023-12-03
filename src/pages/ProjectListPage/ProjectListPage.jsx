@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import "./ProjectListPage.css";
 import ProjectList from "../../components/ProjectList/ProjectList";
 import SearchInput from "../../components/SearchInput/SearchInput";
+import StatusFilter from "../../components/StatusFilter/StatusFilter";
 
 export default function ProjectListPage () {
 
@@ -26,7 +27,7 @@ export default function ProjectListPage () {
 
     useEffect(() => {
         fetchProjects();
-    }, []);
+    }, [filteredProjects]);
 
     // Filter the projects based on search input
     const handleSearch = (filteredProjects) => {

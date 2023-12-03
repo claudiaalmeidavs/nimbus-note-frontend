@@ -1,0 +1,16 @@
+.search-projects-input-container {
+    border: 2px solid purple;
+    font-family: var(--main-font);
+}
+
+.search-projects-label {
+    margin: 10px;
+    font-weight: 500;
+}
+
+.search-projects-input {
+    border: none;
+    background-color: var(--color-2);
+    border-radius: 5px;
+    padding: 5px;
+}
