@@ -112,7 +112,7 @@ export default function ProjectList({ projects, setProjects, filteredProjects, f
                         <div>
                           <ul className="accordion-header">
                             <li className="header-id-date">
-                              Project #{project.id} {project.creation_date.substring(0, 10)}
+                              Project #{project.id}&nbsp;&nbsp;&nbsp;Due: {project.deadline.substring(0, 10)}
                             </li>
                             <li className="header-title">{project.project_title}</li>
                             {overdueMessage && overdueMessage.some((overdueProject) => overdueProject.id === project.id) ? (
@@ -137,6 +137,7 @@ export default function ProjectList({ projects, setProjects, filteredProjects, f
                               {project.company ? ` (${project.company})` : null}
                             </strong>
                           </p>
+                          <p>Date: {project.creation_date.substring(0, 10)}</p>
                           <p>Category: {project.category}</p>
                           <p>Priority: {project.priority}</p>
                           <p>Deadline: {project.deadline.substring(0, 10)}</p>

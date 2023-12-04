@@ -67,9 +67,9 @@ export default function EditProjectForm ({project}) {
         e.preventDefault();
         
           // Convert the deadline to a format accepted by the database
-        const formattedDeadline = formData.deadline
-        ? new Date(formData.deadline).toISOString().slice(0, 19)
-        : null;
+          const formattedDeadline = formData.deadline
+          ? new Date(formData.deadline).toISOString().replace("T", " ").slice(0, 19)
+          : null;
 
         const updatedFormData = {
         ...formData,
