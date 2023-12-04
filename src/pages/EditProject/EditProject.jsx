@@ -13,7 +13,6 @@ export default function EditProject () {
     const fetchProjects = () => {
         axios.get(`http://localhost:5000/projects/${id}`)
         .then((response) => {
-            console.log(response.data[0]);
             setProject(response.data[0])
         })
         .catch((error) => {
