@@ -38,7 +38,6 @@
     align-items: flex-start;
     justify-content: flex-start;
     width: 70%;
-    /* padding: 15px; */
 }
 
 .priority-section {
@@ -70,7 +69,6 @@
 .project-description-section {
     display: flex;
     flex-direction: column;
-    /* padding: 15px; */
     align-self: center;
     align-items: center;
 }

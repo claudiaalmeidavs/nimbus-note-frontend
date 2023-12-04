@@ -17,7 +17,7 @@ export default function Navbar () {
         <span className="navbar-toggler-icon"></span>
         </button>
         <div className={`collapse navbar-collapse ${showMenu ? "show" : ""}`} id="navbarTogglerDemo01"> 
-         <ul className="navbar-nav ms-auto">
+          <ul className="navbar-nav ms-auto">
             <li className="nav-item">
               <Link className="nav-link" to="/">
                 Project list

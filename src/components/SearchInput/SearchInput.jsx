@@ -11,10 +11,8 @@ export default function SearchInput ({onSearch, searchErrorMessage}) {
     useEffect(() => {
         if (searchTerm !== "") {
             onSearch(searchTerm)
-            console.log("infinite search")
         } else {
             onSearch("");
-            console.log("infinite search")
         }
     }, [searchTerm]);
    

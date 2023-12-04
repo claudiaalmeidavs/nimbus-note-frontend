@@ -19,8 +19,6 @@ export default function NewProjectForm () {
     // Error messages in case required fields are not filled out
     const [formErrors, setFormErrors] = useState({});
      
-    // Errors are displaying before submitting, revise this.
-
     const handleChange = (e) => {
         const { name, value } = e.target;
       
@@ -47,7 +45,6 @@ export default function NewProjectForm () {
         // If there are errors, update the formErrors state and stop form submission
         if (Object.keys(errors).length > 0) {
           setFormErrors(errors);
-        //   console.log(formErrors);
           return;
         }
       
@@ -85,8 +82,8 @@ export default function NewProjectForm () {
                         {formErrors.deadline ? <p className="error-message">{formErrors.deadline}</p> : null}
                 </div>
                 <div className="form-second-section">  
-                <div className="form-category-section">
-                    <label className="form-item form-section-heading" htmlFor="category">Project category</label>
+                    <div className="form-category-section">
+                        <label className="form-item form-section-heading" htmlFor="category">Project category</label>
                         <label className="radio-option" htmlFor="data-entry">
                             <input className="radio-button" type="radio" name="category" value="Data Entry" checked={formData.category === "Data Entry"}
                             onChange={handleChange} />Data Entry
@@ -112,7 +109,7 @@ export default function NewProjectForm () {
                             onChange={handleChange}/>Other
                         </label>
                         {formErrors.category ? <p className="error-message">{formErrors.category}</p> : null}
-                </div>
+                    </div>
                     <div className="priority-section">
                         <label className="form-item form-section-heading" htmlFor="priority">Priority</label>
                         <label htmlFor="high" className="radio-option">

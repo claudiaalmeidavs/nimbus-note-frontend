@@ -30,7 +30,7 @@
     align-self: center;
 }
 
-@media screen and (max-width:1500px) {
+@media screen and (max-width:1700px) {
     .search-filter-section {
         flex-direction: column;
     }

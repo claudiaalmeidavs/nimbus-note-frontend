@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
-import "./EditProject.css"
 import EditProjectForm from "../../components/EditProjectForm/EditProjectForm";
 
 export default function EditProject () {
@@ -24,7 +23,6 @@ export default function EditProject () {
 
     useEffect(() => {
         fetchProjects();
-        console.log("Infinite edit")
     }, []);
 
     return (
