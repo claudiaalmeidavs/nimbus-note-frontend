@@ -11,9 +11,10 @@ export default function SearchInput ({onSearch, searchErrorMessage}) {
     useEffect(() => {
         if (searchTerm !== "") {
             onSearch(searchTerm)
+            console.log("infinite search")
         } else {
             onSearch("");
-
+            console.log("infinite search")
         }
     }, [searchTerm]);
    
@@ -21,7 +22,7 @@ export default function SearchInput ({onSearch, searchErrorMessage}) {
         <div className="search-projects-input-container">
             <label className="search-projects-label" htmlFor="search">Browse projects</label>
             <input className="search-projects-input" type="search" placeholder="Project name" value={searchTerm} onChange={handleInputChange} />
-            <p className="search-error-message">{ searchErrorMessage ? <div>No projects match search</div> : null }</p>
+            <div className="search-error-message">{ searchErrorMessage ? <div>No projects match search</div> : null }</div>
         </div>
     )
 } 
