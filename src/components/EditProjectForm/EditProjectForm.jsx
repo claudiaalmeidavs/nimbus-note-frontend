@@ -48,6 +48,7 @@ export default function EditProjectForm ({project}) {
         deadline: project.deadline,
         description: project.description || "",
       }));
+      console.log("infinite formdata?")
     }
   }, [project]);
 

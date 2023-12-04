@@ -24,6 +24,7 @@ export default function EditProject () {
 
     useEffect(() => {
         fetchProjects();
+        console.log("Infinite edit")
     }, []);
 
     return (

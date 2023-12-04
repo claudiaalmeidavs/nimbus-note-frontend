@@ -19,4 +19,26 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    color: var(--color-4);
+    padding-bottom: 20px;
+}
+
+.subheader {
+    font-family: var(--main-font);
+    padding-left: 10px;
+    color: var(--color-1);
+    align-self: center;
+}
+
+@media screen and (max-width:1500px) {
+    .search-filter-section {
+        flex-direction: column;
+    }
+    
+}
+
+@media screen and (max-width: 910px) {
+    .search-filter-section {
+        width: 100%;
+    }
 }

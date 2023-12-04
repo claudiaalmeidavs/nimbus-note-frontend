@@ -112,6 +112,12 @@
     color: var(--color-1);
 }
 
+.overdue-message {
+    background-color: rgb(169, 67, 67);
+    border-radius: 5px;
+    padding: 3px;
+}
+
 @media screen and (max-width: 910px) {
     .projects-accordion {
         width: 100%;

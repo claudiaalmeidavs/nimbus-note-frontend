@@ -17,12 +17,11 @@ export default function ProjectListPage () {
     // Filtered projects from the status filter
     const [filteredProjectsStatus, setFilteredProjectsStatus ] = useState([]);
 
-    const [searchErrorMessage, setSearchErrorMessage] = useState(false);
 
     const fetchProjects = () => {
         axios.get("http://localhost:5000/projects")
         .then((response) => {
-            setProjects(response.data)
+            setProjects(response.data);
         })
         .catch((error) => {
             console.error("Error fetching projects: ", error);
@@ -31,9 +30,12 @@ export default function ProjectListPage () {
 
     useEffect(() => {
         fetchProjects();
+        console.log("Infinite fetch?")
       }, []);
 
-    // Filter the projects based on search input and set error message if no projects match search
+    // Filter the projects based on search input and set error message if no projects match search    
+    const [searchErrorMessage, setSearchErrorMessage] = useState(false);
+
     const handleSearch = (searchTerm) => {
         if (searchTerm !== "") {
             const projectSearchMatch = projects.filter((project) => project.project_title.toLowerCase().includes(searchTerm.toLowerCase()));
@@ -48,19 +50,19 @@ export default function ProjectListPage () {
             }
         } else {
             setFilteredProjects([]);
-            console.log("Search term", searchTerm);
         }
     }
 
-    // Filter the projects based on status input 
+    // Filter the projects based on status input and set error message in case no projects match
+    
     const handleStatusChange = (selectedStatus) => {
         setFilteredProjectsStatus(projects.filter((project) => project.status === selectedStatus))
     }
 
-    // useEffect(() => {
-    //     console.log("These are the projects filtered by status", filteredProjectsStatus);
-    //     console.log("These are the projects filtered by search", filteredProjects);
-    // }, [filteredProjectsStatus])
+    useEffect(() => {
+        console.log("These are the projects filtered by status", filteredProjectsStatus);
+        console.log("These are the projects filtered by search", filteredProjects);
+    }, [filteredProjectsStatus, filteredProjects])
 
     return (
         <div className="project-list-outer-container">
@@ -69,7 +71,8 @@ export default function ProjectListPage () {
                 <SearchInput projects={projects} onSearch={handleSearch} searchErrorMessage={searchErrorMessage} />
                 <StatusFilter projects={projects} onChange={handleStatusChange}/>
             </div>
-            <ProjectList projects={projects} filteredProjects={filteredProjects} filteredProjectsStatus={filteredProjectsStatus}/>
+            <p className="subheader">Sorted by deadline</p>
+            <ProjectList projects={projects} setProjects={setProjects} filteredProjects={filteredProjects} filteredProjectsStatus={filteredProjectsStatus}/>
         </div>
     )
 }
