@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# Nimbus Note (Frontend)
+
+This repository is the frontend of Nimbus Note, a project tracking app that allows you to view, add, edit and filter projects.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Main features
 
-In the project directory, you can run:
+### Register new project
 
-### `npm start`
+Users can register a new project and add important information, such as title, category, deadline, username, priority, and description.
 
-Runs the app in the development mode.\
+### Project list
+
+Users can see the project list with all the projects they've registered sorted by deadline. Here they can also see the details of their projects by clicking on each accordion header.
+
+Users will be alerted when a project is overdue (deadline has passed and status is not "Complete").
+
+### Filtering projects
+
+Users can filter the project list on a search input (which will filter on title) and based on status.
+
+### Edit project
+
+Users can edit the details of each project, by clicking "Edit project".
+
+### Delete projects
+
+Users can delete entries in the project list page.
+
+## Getting started
+
+Follow these steps to run the Nimbus Note app:
+    1. Clone the repository into your local machine by running git clone https://github.com/claudiaalmeidavs/nimbus-note-frontend.git
+    2. Navigate to the project directory by entering the command "cd your-project-folder"
+    3. Run "npm install" in the project directory to install all the necessary packages and dependencies.
+    4. Run the command "npm start" to start the development server
+
+### npm start
+
+To run the app in the development mode, run the command "npm start", alongside with the backend server.
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Authors
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [@Cláudia Almeida](https://github.com/claudiaalmeidavs)

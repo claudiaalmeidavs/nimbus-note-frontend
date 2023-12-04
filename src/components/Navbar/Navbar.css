@@ -1,0 +1,26 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    background-color: var(--color-2);
+  }
+  
+  
+  .brand-name {
+    margin-bottom: 0;
+    margin-left: 25px;
+    color: var(--color-4);
+    font-family: var(--title-font);
+    font-size: 40px;
+  }
+  
+  .nav-item > .nav-link {
+    font-family: var(--main-font);
+    color: var(--color-4);
+    margin-right: 15px;
+    padding: 15px;
+  }
+
+  .nav-item > .nav-link:hover {
+    color: var(--color-1);
+  }

@@ -1,0 +1,44 @@
+.project-list-outer-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.regular-h2 {
+    align-self: center;
+    font-family: var(--main-font);
+    font-size: clamp(25px, 2.5vw, 50px);
+    color: var(--color-4);
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+.search-filter-section {
+    align-self: center;
+    width: 50%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    color: var(--color-4);
+    padding-bottom: 20px;
+}
+
+.subheader {
+    font-family: var(--main-font);
+    padding-left: 10px;
+    color: var(--color-1);
+    align-self: center;
+}
+
+@media screen and (max-width:1700px) {
+    .search-filter-section {
+        flex-direction: column;
+    }
+    
+}
+
+@media screen and (max-width: 910px) {
+    .search-filter-section {
+        width: 100%;
+    }
+}

@@ -1,0 +1,32 @@
+.status-filter-container {
+    font-family: var(--main-font);
+}
+
+.filter-projects-heading-label {
+    margin: 10px;
+    font-weight: 500;
+}
+
+.filter-label {
+    margin-right: 10px;
+}
+
+.filter-radio {
+    margin:3px;
+}
+
+.not-started-radio {
+    accent-color: rgb(169, 67, 67);
+}
+
+.in-progress-radio {
+    accent-color: var(--color-4)
+}
+
+.completed-radio {
+    accent-color: rgb(27, 92, 27);
+}
+
+.clear-radio {
+    accent-color: rgb(118, 116, 116);
+}

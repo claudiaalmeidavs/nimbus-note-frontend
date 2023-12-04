@@ -1,0 +1,175 @@
+
+.new-project-form {
+    display: flex;
+    justify-content: center;
+    color: var(--color-4);
+}
+
+.h1-title {
+    color: var(--color-4);
+    font-family: var(--main-font);
+    padding-bottom: 15px;
+    font-size: 30px;
+}
+.register-project-form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    font-family: var(--main-font);
+    margin: 30px;
+    background-color: var(--color-2);
+    padding: 40px;
+    border-radius: 30px;
+    color: var(--color2);
+    font-weight: 600;
+}
+
+
+.form-section-title {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    align-items: flex-start;
+}
+
+.form-first-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 70%;
+}
+
+.priority-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.form-second-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+
+.form-category-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    width: 250px;
+}
+
+.username {
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+
+.project-description-section {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+}
+
+.txtarea-desc {
+    outline: none;
+    width: 400px;
+    height: 100px;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 16px;
+    font-family: var(--main-font);
+    color: var(--color1);
+    resize: none;
+    border: none;
+}
+
+.txtarea-small {
+    outline: none;
+    width: 400px;
+    height: 45px;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    font-family: var(--main-font);
+    color: var(--color1);
+    resize: none;
+    border: none;
+}
+
+.form-section-heading {
+    font-size: 20px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+.project-deadline-input {
+    width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: var(--main-font);
+    color: var(--color1);
+    border: none;
+    outline: none;
+}
+
+.radio-option {
+    font-size: 15px;
+    margin-top: 3px;
+}
+
+.radio-button {
+    margin-right: 3px;
+}
+
+.radio-btn-prior,
+.radio-btn-help {
+    display: flex;
+    flex-direction: column;
+    font-weight: 400;
+}
+
+.btn-submit {
+    padding: 7px;
+    width: 130px;
+    border-radius: 10px;
+    border-style: none;
+    background-color: var(--color-4);
+    color: var(--color-2);
+    font-weight: 700;
+    font-family: var(--main-font);
+    font-size: 18px;
+    align-self: center;
+    margin-top: 10px;
+}
+
+.btn-submit:hover{
+    background-color: var(--color-1);
+}
+
+.h3-text {
+    font-weight: 100;
+    font-size: 16px;
+}
+
+.error-message {
+    font-size: 12px;
+    padding: 0;
+    margin-top: 0;
+    color: rgb(169, 67, 67);
+    font-weight: bold;
+}
+
+@media screen and (max-width: 950px)  {
+    .register-project-form {
+        width: 90%;
+    }
+
+    .form-section-title {
+        align-items: flex-start;
+        padding: 15px;
+    }
+}
