@@ -71,6 +71,7 @@ export default function ProjectListPage () {
                 <SearchInput projects={projects} onSearch={handleSearch} searchErrorMessage={searchErrorMessage} />
                 <StatusFilter projects={projects} onChange={handleStatusChange}/>
             </div>
+            <p className="subheader">Sorted by deadline</p>
             <ProjectList projects={projects} setProjects={setProjects} filteredProjects={filteredProjects} filteredProjectsStatus={filteredProjectsStatus}/>
         </div>
     )
