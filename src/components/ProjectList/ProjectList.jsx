@@ -7,11 +7,6 @@ import { useState, useEffect} from "react";
 
 export default function ProjectList({ projects, setProjects, filteredProjects, filteredProjectsStatus }) {
 
-  // useEffect(() => {
-  //   fetchProjects();
-  //   console.log("Fetched projects", projects)
-  // }, [])
-
   // To delete entry
   function handleDelete(id) {
     axios
@@ -47,36 +42,26 @@ export default function ProjectList({ projects, setProjects, filteredProjects, f
           if (filteredProjects.length === 0 && filteredProjectsStatus.length === 0) {
             // Both arrays are empty, include all projects
             filtered = projects;
-            console.log("Infinite?")
           } else if (filteredProjects.length > 0 && filteredProjectsStatus.length === 0) {
             // Only filteredProjects is not empty
             filtered = filteredProjects;
-            console.log("Infinite?")
           } else if (filteredProjects.length === 0 && filteredProjectsStatus.length > 0) {
             // Only filteredProjectsStatus is not empty
             filtered = filteredProjectsStatus;
-            console.log("Infinite?")
           } else {
             // Both filteredProjects and filteredProjectsStatus are not empty. Includes only projects on both.
             filtered = filteredProjects.filter((project) =>
             filteredProjectsStatus.some((statusProject) => statusProject.id === project.id)
             );
-            console.log("Infinite?")
           }
           setCombinedFilteredProjects(prevFilteredProjects => {
-            // Use the functional form to avoid dependency on projects
             return filtered.length > 0 ? filtered : prevFilteredProjects;
           });
         } else {
           // If either of the conditions is not met, set it to the original projects
           setCombinedFilteredProjects(projects);
-          // console.log("Infinite?")
         }
       }, [filteredProjects, filteredProjectsStatus, projects]);
-
-      useEffect(() => {
-        console.log("These are the combined filters", combinedFilteredProjects);
-      }, [filteredProjects, filteredProjectsStatus]);
 
       // To alert when projects are overdue
       const [overdueMessage, setOverdueMessage] = useState([]);
@@ -87,13 +72,11 @@ export default function ProjectList({ projects, setProjects, filteredProjects, f
           ["Not started", "In progress"].includes(project.status) &&
           new Date(project.deadline) < currentDate
         ));
-        console.log("Overdue projects", overdueProjects);
         setOverdueMessage(overdueProjects);
       }
 
       useEffect(() => {
           findOverdueProjects();
-          console.log("infinite overdue?")
       }, [combinedFilteredProjects])
 
       return (

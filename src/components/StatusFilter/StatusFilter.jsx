@@ -11,10 +11,8 @@ export default function StatusFilter ({onChange}) {
     useEffect(() => {
         if (selectedStatus !== "") {
             onChange(selectedStatus);
-            console.log("This is the current status", selectedStatus)
         } else {
             onChange(null);
-            console.log("Filter cleared.")
         }
     }, [selectedStatus]);
 

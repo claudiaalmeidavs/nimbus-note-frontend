@@ -9,36 +9,8 @@ export default function EditProjectForm ({project}) {
     const { id } = useParams();
 
     // Initialize the form data with the project prop if available
-  const initialFormData = project
-  ? {
-      user_name: project.user_name,
-      company: project.company || "",
-      project_title: project.project_title,
-      category: project.category,
-      status: project.status,
-      priority: project.priority,
-      deadline: project.deadline,
-      description: project.description || "",
-    }
-  : {
-      user_name: "",
-      company: "",
-      project_title: "",
-      category: "",
-      status: "",
-      priority: "",
-      deadline: "",
-      description: "",
-    };
-
-    const [formData, setFormData] = useState(initialFormData);
-
-    
-  // Update form data when the project prop changes
-  useEffect(() => {
-    if (project) {
-      setFormData((prevData) => ({
-        ...prevData,
+    const initialFormData = project
+        ? {
         user_name: project.user_name,
         company: project.company || "",
         project_title: project.project_title,
@@ -47,10 +19,37 @@ export default function EditProjectForm ({project}) {
         priority: project.priority,
         deadline: project.deadline,
         description: project.description || "",
-      }));
-      console.log("infinite formdata?")
-    }
-  }, [project]);
+        }
+    : {
+        user_name: "",
+        company: "",
+        project_title: "",
+        category: "",
+        status: "",
+        priority: "",
+        deadline: "",
+        description: "",
+    };
+
+    const [formData, setFormData] = useState(initialFormData);
+
+    
+    // Update form data when the project prop changes
+    useEffect(() => {
+        if (project) {
+            setFormData((prevData) => ({
+                 ...prevData,
+                user_name: project.user_name,
+                company: project.company || "",
+                project_title: project.project_title,
+                category: project.category,
+                status: project.status,
+                priority: project.priority,
+                deadline: project.deadline,
+                description: project.description || "",
+            }));
+        }
+    }, [project]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -60,16 +59,15 @@ export default function EditProjectForm ({project}) {
           ...prevData,
           [name]: value,
         }));
-        console.log(formData);
       };
     
-      const handleSubmit = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         
-          // Convert the deadline to a format accepted by the database
-          const formattedDeadline = formData.deadline
-          ? new Date(formData.deadline).toISOString().replace("T", " ").slice(0, 19)
-          : null;
+        // Convert the deadline to a format accepted by the database
+        const formattedDeadline = formData.deadline
+        ? new Date(formData.deadline).toISOString().replace("T", " ").slice(0, 19)
+        : null;
 
         const updatedFormData = {
         ...formData,
@@ -81,9 +79,9 @@ export default function EditProjectForm ({project}) {
          .then(() => {
            navigate("/");
          })
-    
          .catch((error) => console.error(error))
-     };
+    };
+    
     return (
         <div className="new-project-form">
             {project ? 
@@ -119,8 +117,8 @@ export default function EditProjectForm ({project}) {
                         <input className="project-deadline-input" type="date" name="deadline" onChange={handleChange} />
                 </div>
                 <div className="form-second-section">  
-                <div className="form-category-section">
-                    <label className="form-item form-section-heading" htmlFor="category">Project category</label>
+                    <div className="form-category-section">
+                        <label className="form-item form-section-heading" htmlFor="category">Project category</label>
                         <label className="radio-option" htmlFor="data-entry">
                             <input className="radio-button" type="radio" name="category" value="Data Entry" checked={formData.category === "Data Entry"}
                             onChange={handleChange} />Data Entry
@@ -145,7 +143,7 @@ export default function EditProjectForm ({project}) {
                             <input className="radio-button" type="radio" name="category" value="Other" checked={formData.category === "Other"}
                             onChange={handleChange}/>Other
                         </label>
-                </div>
+                    </div>
                     <div className="priority-section">
                         <label className="form-item form-section-heading" htmlFor="priority">Priority</label>
                         <label htmlFor="high" className="radio-option">

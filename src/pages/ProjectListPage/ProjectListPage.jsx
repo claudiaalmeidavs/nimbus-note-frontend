@@ -11,10 +11,10 @@ export default function ProjectListPage () {
     // fetch projects from database
     const [ projects, setProjects ] = useState([]);
     
-    //filtered projects from the search input
+    // filtered projects from the search input
     const [filteredProjects, setFilteredProjects] = useState([]);
 
-    // Filtered projects from the status filter
+    // filtered projects from the status filter
     const [filteredProjectsStatus, setFilteredProjectsStatus ] = useState([]);
 
 
@@ -30,7 +30,6 @@ export default function ProjectListPage () {
 
     useEffect(() => {
         fetchProjects();
-        console.log("Infinite fetch?")
       }, []);
 
     // Filter the projects based on search input and set error message if no projects match search    
@@ -53,16 +52,11 @@ export default function ProjectListPage () {
         }
     }
 
-    // Filter the projects based on status input and set error message in case no projects match
+    // Filter the projects based on status input
     
     const handleStatusChange = (selectedStatus) => {
         setFilteredProjectsStatus(projects.filter((project) => project.status === selectedStatus))
     }
-
-    useEffect(() => {
-        console.log("These are the projects filtered by status", filteredProjectsStatus);
-        console.log("These are the projects filtered by search", filteredProjects);
-    }, [filteredProjectsStatus, filteredProjects])
 
     return (
         <div className="project-list-outer-container">
